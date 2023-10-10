@@ -9,10 +9,9 @@ ADD . /app
 
 # Install pip and dependencies
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r /requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 
 EXPOSE 8000 
 
-# CMD ["flask", "run"]
 CMD ["gunicorn", "main:app", "--bind", "0.0.0.0:8080"]
