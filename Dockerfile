@@ -5,13 +5,13 @@ FROM python:3.9.13
 WORKDIR /app
 
 # Copy current directory on docker image
-ADD ./ /app
+ADD ./app
 
 # Install pip and dependencies
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 
 
 EXPOSE 8000 
 
-CMD ["python", "/app/app.py"]
+CMD ["python", "/app.py"]
